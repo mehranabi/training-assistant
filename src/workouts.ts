@@ -1,21 +1,25 @@
 export interface Workout {
+  key: string
   sets: number
   timeout: number
 }
 
-const WORKOUTS: Record<'four_set' | 'three_set' | 'seven_set', Workout> = {
-  four_set: {
+const WORKOUTS: Workout[] = [
+  {
+    key: '4set',
     sets: 4,
     timeout: 90,
   },
-  three_set: {
+  {
+    key: '3set',
     sets: 3,
     timeout: 90,
   },
-  seven_set: {
+  {
+    key: '7set',
     sets: 7,
     timeout: 40,
   },
-}
+]
 
 export default WORKOUTS

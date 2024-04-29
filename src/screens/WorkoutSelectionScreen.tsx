@@ -18,27 +18,16 @@ function WorkoutSelectionScreen() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <TouchableOpacity
-        activeOpacity={0.8}
-        style={[styles.card, { backgroundColor: '#4CAF50' }]}
-        onPress={navigateToSetScreen(WORKOUTS.four_set)}
-      >
-        <Text style={styles.title}>4-Set Workout</Text>
-      </TouchableOpacity>
-      <TouchableOpacity
-        activeOpacity={0.8}
-        style={[styles.card, { backgroundColor: '#2196F3' }]}
-        onPress={navigateToSetScreen(WORKOUTS.three_set)}
-      >
-        <Text style={styles.title}>3-Set Workout</Text>
-      </TouchableOpacity>
-      <TouchableOpacity
-        activeOpacity={0.8}
-        style={[styles.card, { backgroundColor: '#E53935' }]}
-        onPress={navigateToSetScreen(WORKOUTS.seven_set)}
-      >
-        <Text style={styles.title}>7-Set Workout</Text>
-      </TouchableOpacity>
+      {WORKOUTS.map((workout) => (
+        <TouchableOpacity
+          key={workout.key}
+          activeOpacity={0.8}
+          style={[styles.card, { backgroundColor: '#212121' }]}
+          onPress={navigateToSetScreen(workout)}
+        >
+          <Text style={styles.title}>{workout.sets}-Set Workout</Text>
+        </TouchableOpacity>
+      ))}
     </SafeAreaView>
   )
 }
@@ -46,7 +35,6 @@ function WorkoutSelectionScreen() {
 const styles = StyleSheet.create({
   card: {
     flexGrow: 1,
-    margin: 8,
     padding: 16,
     alignItems: 'center',
     justifyContent: 'center',
@@ -54,11 +42,14 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
+    gap: 8,
+    padding: 8,
   },
   title: {
     textAlign: 'center',
     fontSize: 36,
     fontWeight: 'bold',
+    color: '#FAFAFA',
   },
 })
 
