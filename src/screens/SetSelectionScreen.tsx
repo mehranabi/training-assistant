@@ -1,14 +1,7 @@
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { NativeStackScreenProps } from '@react-navigation/native-stack'
 import { MainStackParamList } from '../navigation/types'
-import {
-  Modal,
-  StyleSheet,
-  Text,
-  TouchableHighlight,
-  TouchableOpacity,
-  View,
-} from 'react-native'
+import { StyleSheet, Text, TouchableOpacity } from 'react-native'
 import { useEffect, useState } from 'react'
 import { CountdownModal } from '../components'
 
