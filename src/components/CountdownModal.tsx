@@ -1,9 +1,10 @@
-import { Modal, StyleSheet, Text, View } from 'react-native'
+import { Modal, StyleSheet, View } from 'react-native'
+import CircularProgress from './CircularProgress'
 
 interface CountdownModalProps {
   isVisible: boolean
-  duration: number
   time: number
+  duration: number
 }
 
 function CountdownModal(props: CountdownModalProps) {
@@ -18,10 +19,7 @@ function CountdownModal(props: CountdownModalProps) {
     >
       <View style={styles.container}>
         <View style={styles.modal}>
-          <Text style={styles.text}>Take some rest!</Text>
-          <Text style={styles.text}>
-            {time}/{duration}
-          </Text>
+          <CircularProgress duration={duration} label={time.toString()} />
         </View>
       </View>
     </Modal>

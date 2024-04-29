@@ -33,7 +33,7 @@ function SetSelectionScreen(props: Props) {
   const [countdown, setCountdown] = useState<number>(0)
 
   const onSetPress = (key: number) => () => {
-    setCountdown(90)
+    setCountdown(workout.timeout)
     setSets((sets) =>
       sets.map((set): Set => {
         if (set.key === key) return { key, done: true }
